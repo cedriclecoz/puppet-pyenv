@@ -8,3 +8,8 @@ if ! echo $PATH | grep -q pyenv; then
   eval "$(pyenv init -)"
   eval "$(pyenv init --path)"
 fi
+if ! echo $PATH | grep -q pyenv-virtualenv; then
+    if test -d $PYENV_ROOT/plugins/pyenv-virtualenv; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi
